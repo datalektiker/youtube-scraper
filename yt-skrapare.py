@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QProgressBar,
-                             QHBoxLayout, QLabel, QLineEdit, QFormLayout, QMessageBox)
-from PyQt5.QtCore import QThread, pyqtSignal, QObject, Qt
+                             QHBoxLayout, QLineEdit, QFormLayout, QMessageBox)
+from PyQt5.QtCore import QThread, pyqtSignal, QObject
 import asyncio
 import aiohttp
 from bs4 import BeautifulSoup
