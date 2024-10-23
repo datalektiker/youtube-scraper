@@ -133,3 +133,19 @@
 2024-10-23 12:24:19,450 - INFO - Skrapar: https://hugo-btg.pages.dev/posts/
 2024-10-23 12:24:20,006 - INFO - Skrapar: https://hugo-btg.pages.dev/posts/my-first-post/
 2024-10-23 12:24:20,557 - INFO - Skrapar: https://hugo-btg.pages.dev/#intro
+2024-10-23 12:31:23,266 - INFO - Skrapar: https://hugo-btg.pages.dev/
+2024-10-23 12:31:23,823 - INFO - Skrapar: https://hugo-btg.pages.dev/posts/
+2024-10-23 12:31:24,325 - INFO - Skrapar: https://hugo-btg.pages.dev/about/
+2024-10-23 12:31:24,826 - INFO - Skrapar: https://hugo-btg.pages.dev/#main-content
+2024-10-23 12:31:25,327 - INFO - Skrapar: https://hugo-btg.pages.dev/#the-top
+2024-10-23 12:31:25,878 - INFO - Skrapar: https://hugo-btg.pages.dev/posts/my-first-post/
+2024-10-23 12:31:26,449 - INFO - Skrapar: https://hugo-btg.pages.dev/#intro
+2024-10-23 12:34:51,530 - INFO - Skrapar: https://hugo-btg.pages.dev/
+2024-10-23 12:34:52,087 - INFO - Skrapar: https://hugo-btg.pages.dev/posts/
+2024-10-23 12:34:52,588 - INFO - Skrapar: https://hugo-btg.pages.dev/about/
+2024-10-23 12:34:53,089 - INFO - Skrapar: https://hugo-btg.pages.dev/#the-top
+2024-10-23 12:34:53,590 - INFO - Skrapar: https://hugo-btg.pages.dev/#main-content
+2024-10-23 12:34:54,151 - INFO - Skrapar: https://hugo-btg.pages.dev/posts/my-first-post/
+2024-10-23 12:34:54,712 - INFO - Skrapar: https://hugo-btg.pages.dev/#intro
+2024-10-23 13:13:11,424 - ERROR - Error fetching robots.txt from draj.se: /robots.txt
+2024-10-23 13:13:11,424 - ERROR - Error fetching draj.se: draj.se

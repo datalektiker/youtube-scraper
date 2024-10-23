@@ -1,4 +1,4 @@
-URL: https://hugo-btg.pages.dev/posts/my-first-post/
+URL: http://hugo-btg.pages.dev/posts/my-first-post/
 Sida: My First Post · @draj
 YouTube-video: https://www.youtube.com/embed/rdefb5kUtKQ
 
