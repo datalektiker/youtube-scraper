@@ -1,6 +1,0 @@
-{
-  "start_url": "https://hugo-btg.pages.dev/",
-  "max_pages": 500,
-  "concurrency": 5,
-  "delay": 1
-}
