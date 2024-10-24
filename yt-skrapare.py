@@ -43,18 +43,29 @@ async def fetch_and_parse(session, url, robots_parser):
                 content = await response.text()
                 soup = BeautifulSoup(content, 'html.parser')
                 title = soup.title.string if soup.title else "Ingen titel"
-                return soup, url, title
+                youtube_links = extract_youtube_links(soup)
+                return soup, url, title, youtube_links
     except Exception as e:
         logging.error(f"Error fetching {url}: {str(e)}")
     return None
 
 def extract_youtube_links(soup):
     youtube_links = []
+
+    # Hitta iframe-inbäddningar
     iframes = soup.find_all('iframe')
     for iframe in iframes:
         src = iframe.get('src')
         if src and 'youtube.com/embed/' in src:
             youtube_links.append(src)
+    
+    # Hitta <a>-taggar med klassen "sv-embed"
+    a_tags = soup.find_all('a', class_='sv-embed')
+    for a_tag in a_tags:
+        href = a_tag.get('href')
+        if href and 'youtube.com/watch?v=' in href:
+            youtube_links.append(href)
+            
     return youtube_links
 
 def extract_links(soup, base_url):
@@ -113,12 +124,11 @@ class ScraperWorker(QThread):
                     for completed_task in asyncio.as_completed(tasks):
                         result = await completed_task
                         if result:
-                            soup, url, title = result
+                            soup, url, title, youtube_links = result
                             visited.add(url)
                             message = f"Skrapar: {url}"
                             self.signals.update.emit(message)
 
-                            youtube_links = extract_youtube_links(soup)
                             for link in youtube_links:
                                 youtube_data.append((url, title, link))
                                 self.signals.update.emit(f"<b>Hittade YouTube-länk på {url}: {link}</b>")
@@ -268,11 +278,6 @@ class ScraperGUI(QMainWindow):
                 f.write(f"YouTube-video: {youtube_link}\n\n")
 
         if youtube_data:
-            with open('resultat.txt', 'w', encoding='utf-8') as f:
-                for url, title, youtube_link in youtube_data:
-                    f.write(f"URL: {url}\n")
-                    f.write(f"Sida: {title}\n")
-                    f.write(f"YouTube-video: {youtube_link}\n\n")
             self.text_area.append("---------------------------------------")
             self.text_area.append("")
             self.text_area.append("Resultaten har sparats i 'resultat.txt'")
